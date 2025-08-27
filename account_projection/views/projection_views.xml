@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_account_projection_tree" model="ir.ui.view">
+        <field name="name">account.projection.tree</field>
+        <field name="model">account.projection</field>
+        <field name="arch" type="xml">
+            <tree string="Projections">
+                <field name="name"/>
+                <field name="date_expected"/>
+                <field name="partner_id"/>
+                <field name="account_id"/>
+                <field name="amount"/>
+                <field name="amount_realized"/>
+                <field name="amount_remaining"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_account_projection_form" model="ir.ui.view">
+        <field name="name">account.projection.form</field>
+        <field name="model">account.projection</field>
+        <field name="arch" type="xml">
+            <form string="Projection">
+                <header>
+                    <button name="action_mark_draft" type="object" string="Set to Draft" states="cancelled,dropped,projected,partial,realized"/>
+                    <button name="action_mark_cancelled" type="object" string="Cancel" states="draft,projected,partial"/>
+                    <button name="action_mark_dropped" type="object" string="Drop" states="draft,projected,partial"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="account_id"/>
+                        <field name="category_id"/>
+                        <field name="date_expected"/>
+                        <field name="amount"/>
+                        <field name="amount_realized" readonly="1"/>
+                        <field name="amount_remaining" readonly="1"/>
+                        <field name="state" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Realizations">
+                            <field name="realization_ids">
+                                <tree editable="bottom">
+                                    <field name="move_id"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_projection" model="ir.actions.act_window">
+        <field name="name">Projections</field>
+        <field name="res_model">account.projection</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_account_projection" name="Projections" parent="account.menu_finance" action="action_account_projection"/>
+</odoo>
