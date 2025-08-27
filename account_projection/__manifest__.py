@@ -6,6 +6,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/account_move_views.xml',
+        'views/projection_views.xml',
         'views/projection_link_wizard_views.xml',
         'views/projection_report_views.xml',
         'report/projection_report.xml',

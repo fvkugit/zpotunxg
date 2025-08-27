@@ -9,6 +9,8 @@ The module currently includes:
 * `account.projection` to record projected amounts and track their
   realization. Each projection must be linked to an account for
   traceability in reports and when matching real documents.
+* Tree and form views to create and manage projections from the
+  Accounting app.
 * `account.projection.realization` to link projections with
   `account.move` records for partial or full realization.
 * Categorization via `account.projection.category`.
