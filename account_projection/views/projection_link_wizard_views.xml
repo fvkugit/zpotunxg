@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_projection_link_wizard" model="ir.ui.view">
+        <field name="name">account.projection.link.wizard.form</field>
+        <field name="model">account.projection.link.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Link Projection">
+                <group>
+                    <field name="projection_id"/>
+                    <field name="amount"/>
+                </group>
+                <footer>
+                    <button string="Link" type="object" name="action_link" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

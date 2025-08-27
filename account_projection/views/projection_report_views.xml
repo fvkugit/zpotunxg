@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_projection_report_tree" model="ir.ui.view">
+        <field name="name">account.projection.report.tree</field>
+        <field name="model">account.projection.report</field>
+        <field name="arch" type="xml">
+            <tree string="Projection Reports">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_projection_report_form" model="ir.ui.view">
+        <field name="name">account.projection.report.form</field>
+        <field name="model">account.projection.report</field>
+        <field name="arch" type="xml">
+            <form string="Projection Report">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="account_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_print_xlsx" string="Print XLSX" type="object" class="btn-primary"/>
+                    <button special="cancel" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_projection_report" model="ir.actions.act_window">
+        <field name="name">Projection Reports</field>
+        <field name="res_model">account.projection.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_projection_report_root" name="Projection Report" parent="account.menu_finance" sequence="50"/>
+    <menuitem id="menu_projection_report" name="Configurations" parent="menu_projection_report_root" action="action_projection_report"/>
+</odoo>
