@@ -8,6 +8,7 @@
                 <button name="action_open_projection_wizard" type="object" string="Link Projection" class="oe_highlight" attrs="{'invisible': [('projection_match_ids','=',[])]}"/>
             </header>
             <xpath expr="//sheet" position="inside">
+                <field name="projection_match_ids"/>
                 <div class="alert alert-info" attrs="{'invisible': [('projection_match_ids','=',[])]}">
                     <span t-translate="True">Matching projections found. Use the Link Projection button to link.</span>
                 </div>

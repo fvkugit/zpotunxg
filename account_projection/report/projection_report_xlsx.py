@@ -1,11 +1,10 @@
 from odoo import models
-from odoo.addons.report_xlsx.report.report_xlsx import ReportXlsx
 
-
-class ProjectionReportXlsx(ReportXlsx):
+class ProjectionReportXlsx(models.AbstractModel):
     """XLSX report for financial projections."""
 
     _name = 'report.account_projection.projection_report_xlsx'
+    _inherit = 'report.report_xlsx.abstract'
     _description = 'Projection Report XLSX'
 
     def generate_xlsx_report(self, workbook, data, configs):
