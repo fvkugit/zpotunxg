@@ -1,0 +1,10 @@
+<odoo>
+    <report
+        id="action_projection_report_xlsx"
+        model="account.projection.report"
+        string="Projection Report"
+        report_type="xlsx"
+        name="account_projection.projection_report_xlsx"
+        file="projection_report"
+    />
+</odoo>

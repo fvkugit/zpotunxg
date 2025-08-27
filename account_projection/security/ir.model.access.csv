@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_projection_user,account_projection_user,model_account_projection,base.group_user,1,1,1,1
+access_account_projection_realization_user,account_projection_realization_user,model_account_projection_realization,base.group_user,1,1,1,1
+access_account_projection_category_user,account_projection_category_user,model_account_projection_category,base.group_user,1,1,1,1
+access_account_projection_report_user,account_projection_report_user,model_account_projection_report,base.group_user,1,1,1,1
